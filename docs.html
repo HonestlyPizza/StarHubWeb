@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Documentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to bottom right, #0f1623, #1a1b26);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2.5rem;
+            background: rgba(10, 15, 26, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            height: 80px;
+            border-bottom: 1px solid rgba(100, 125, 238, 0.1);
+        }
+
+        .logo {
+            color: #647DEE;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .logo:hover {
+            color: #8499ff;
+            text-shadow: 0 0 10px rgba(100, 125, 238, 0.5);
+        }
+
+        .search-container {
+            width: 300px;
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 0.75rem 1.5rem;
+            background-color: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(100, 125, 238, 0.2);
+            border-radius: 8px;
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .search-container input:focus {
+            border-color: #647DEE;
+            box-shadow: 0 0 0 2px rgba(100, 125, 238, 0.2);
+            outline: none;
+        }
+
+        .nav-buttons {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-buttons a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            position: relative;
+        }
+
+        .nav-buttons a:hover {
+            color: white;
+            background-color: rgba(100, 125, 238, 0.1);
+        }
+
+        .nav-buttons a.active {
+            color: white;
+            background-color: rgba(100, 125, 238, 0.15);
+        }
+
+        .nav-buttons a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1.5rem;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #647DEE;
+            box-shadow: 0 0 10px rgba(100, 125, 238, 0.5);
+        }
+
+        .sidebar {
+            width: 300px;
+            background-color: rgba(15, 23, 42, 0.5);
+            padding: 6rem 1.5rem 1.5rem;
+            height: 100vh;
+            position: fixed;
+            overflow-y: auto;
+            border-right: 1px solid rgba(100, 125, 238, 0.1);
+        }
+
+        .sidebar-title {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
+        }
+
+        .sidebar-items {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .sidebar-item {
+            padding: 0.75rem 1rem;
+            color: #94a3b8;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sidebar-item:hover {
+            color: white;
+            background-color: rgba(100, 125, 238, 0.1);
+            transform: translateX(5px);
+        }
+
+        .sidebar-item.active {
+            color: white;
+            background-color: rgba(100, 125, 238, 0.15);
+            border-left: 3px solid #647DEE;
+        }
+
+        .sidebar-item.active::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background-color: #647DEE;
+            box-shadow: 0 0 10px rgba(100, 125, 238, 0.5);
+        }
+
+        .content {
+            margin-left: 300px;
+            padding: 6rem 2.5rem 2.5rem;
+            flex: 1;
+        }
+
+        .content-section {
+            display: none;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        /* Rest of your existing styles... */
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">Star Executor</a>
+        <div class="search-container">
+            <input type="text" placeholder="Search or ask...">
+        </div>
+        <div class="nav-buttons">
+            <a href="index.html">HOME</a>
+            <a href="docs.html" class="active">DOCS</a>
+            <a href="login.html">LOGIN</a>
+            <a href="register.html">REGISTER</a>
+        </div>
+    </nav>
+
+    <aside class="sidebar">
+        <h2 class="sidebar-title">Guides</h2>
+        <div class="sidebar-items">
+            <a href="#introduction" class="sidebar-item active">Introduction</a>
+            <a href="#getting-started" class="sidebar-item">Getting Started</a>
+            <a href="#installation" class="sidebar-item">Installation</a>
+            <a href="#configuration" class="sidebar-item">Configuration</a>
+            <a href="#api-reference" class="sidebar-item">API Reference</a>
+            <a href="#examples" class="sidebar-item">Examples</a>
+        </div>
+    </aside>
+
+    <main class="content">
+        <div id="introduction" class="content-section active">
+            <h1>Introduction</h1>
+            <p style="color: #94a3b8; margin: 1rem 0;">Star API Documentation</p>
+            <!-- Your existing content -->
+        </div>
+    </main>
+
+    <script>
+        // Update active states based on current page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get current page
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            
+            // Update nav buttons
+            document.querySelectorAll('.nav-buttons a').forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Handle sidebar navigation
+            const sidebarItems = document.querySelectorAll('.sidebar-item');
+            const contentSections = document.querySelectorAll('.content-section');
+
+            sidebarItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    
+                    // Remove active class from all items
+                    sidebarItems.forEach(i => i.classList.remove('active'));
+                    contentSections.forEach(s => s.classList.remove('active'));
+                    
+                    // Add active class to clicked item
+                    item.classList.add('active');
+                    
+                    // Show corresponding content
+                    const contentId = item.getAttribute('href').substring(1);
+                    document.getElementById(contentId).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
