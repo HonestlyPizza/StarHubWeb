@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Executor</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Same styles as before plus new additions -->
+    <style>
+        /* Previous styles remain, adding new styles for features */
+        .checkbox-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .checkbox-wrapper input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            accent-color: var(--primary);
+        }
+
+        .checkbox-wrapper label {
+            color: var(--text);
+            font-size: 0.9rem;
+            user-select: none;
+        }
+
+        .captcha-container {
+            margin: 1rem 0;
+            background: rgba(37, 99, 235, 0.05);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(37, 99, 235, 0.1);
+        }
+
+        .error-message {
+            color: #ef4444;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+
+        .success-message {
+            color: #22c55e;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Loading state for button */
+        .button.loading {
+            position: relative;
+            color: transparent;
+        }
+
+        .button.loading::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+    </style>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+    <nav>
+        <div class="logo"><a href="index.html" class="logo">Star Executor</a></div>
+        <div class="nav-links">
+            <a href="index.html">HOME</a>
+            <a href="docs.html">DOCS</a>
+            <a href="login.html" class="active">LOGIN</a>
+            <a href="register.html">REGISTER</a>
+        </div>
+    </nav>
+
+    <div class="auth-container">
+        <div class="auth-box">
+            <h2>Welcome Back</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <div class="checkbox-wrapper">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">Remember me</label>
+                </div>
+                <div class="captcha-container">
+                    <div class="g-recaptcha" data-sitekey="your-site-key"></div>
+                </div>
+                <button type="submit" class="button primary" style="width: 100%">Sign In</button>
+            </form>
+            <a href="forgot-password.html" class="auth-link">Forgot password?</a>
+            <a href="register.html" class="auth-link">Don't have an account? Register here</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginForm = document.getElementById('loginForm');
+            const submitButton = loginForm.querySelector('button[type="submit"]');
+
+            loginForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+
+                // Check reCAPTCHA
+                const captchaResponse = grecaptcha.getResponse();
+                if (!captchaResponse) {
+                    alert('Please complete the CAPTCHA');
+                    return;
+                }
+
+                // Show loading state
+                submitButton.classList.add('loading');
+
+                // Simulate API call
+                try {
+                    await new Promise(resolve => setTimeout(resolve, 1500));
+                    const rememberMe = document.getElementById('remember').checked;
+                    
+                    if (rememberMe) {
+                        // Store authentication token in localStorage
+                        localStorage.setItem('auth_token', 'sample_token');
+                    } else {
+                        // Store authentication token in sessionStorage
+                        sessionStorage.setItem('auth_token', 'sample_token');
+                    }
+
+                    window.location.href = 'index.html';
+                } catch (error) {
+                    alert('Login failed. Please try again.');
+                } finally {
+                    submitButton.classList.remove('loading');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

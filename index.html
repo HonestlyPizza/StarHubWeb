@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Executor | Advanced Scripting Tool</title>
+    <meta name="description" content="Elevate your scripting experience with Star Executor, featuring advanced tools and a user-friendly interface.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta property="og:title" content="Star Executor | Advanced Scripting Tool">
+    <meta property="og:description" content="Elevate your scripting experience with Star Executor.">
+    <meta property="og:image" content="https://yoursite.com/preview-image.jpg">
+</head>
+<body>
+    <!-- Cookie consent -->
+    <div class="cookie-consent" id="cookie-consent">
+        <div class="cookie-content">
+            <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
+            <div class="cookie-buttons">
+                <button id="accept-cookies" class="button primary">Accept</button>
+                <button id="decline-cookies" class="button secondary">Decline</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Add particle background -->
+    <div id="particles-bg"></div>
+
+    <nav>
+        <div class="logo"><a href="index.html" class="logo">Star Executor</a></div>
+        <div class="nav-links">
+            <a href="index.html" class="active">HOME</a>
+            <a href="docs.html">DOCS</a>
+            <a href="login.html">LOGIN</a>
+            <a href="register.html">REGISTER</a>
+        </div>
+        <div class="theme-toggle">
+            <i class="fas fa-moon"></i>
+        </div>
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <div class="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>The best of the best with <span class="typing-text"></span></h1>
+            <p>Elevate your scripting experience with our premium executor, equipped with advanced tools and a user-friendly interface for optimal efficiency.</p>
+            <div class="buttons">
+                <a href="#" class="button primary"><i class="fas fa-key"></i> Get Key</a>
+                <a href="#" class="button secondary"><i class="fas fa-download"></i> Download</a>
+            </div>
+        </div>
+        <div class="preview">
+            <img src="starhubp.gif" alt="Star Executor Preview">
+        </div>
+    </section>
+
+    <section class="features">
+        <h2 class="section-title">Key <span class="gradient-text">Features</span></h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-bolt feature-icon"></i>
+                <h3>Lightning Fast</h3>
+                <p>Execute scripts with minimal latency for smooth performance.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-shield-alt feature-icon"></i>
+                <h3>Advanced Security</h3>
+                <p>Built-in protection against detection and unwanted interference.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-code feature-icon"></i>
+                <h3>Script Library</h3>
+                <p>Access a vast collection of ready-to-use scripts and modules.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-sync feature-icon"></i>
+                <h3>Regular Updates</h3>
+                <p>Stay current with automatic updates and new features.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="gradient-overlay"></div>
+        <h2 class="section-title">What Users <span class="gradient-text">Say</span></h2>
+        <div class="testimonial-container">
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p>"Star Executor transformed how I work with scripts. The interface is intuitive and the performance is unmatched."</p>
+                    <div class="user">
+                        <div class="user-avatar"></div>
+                        <div class="user-info">
+                            <h4>Alex K.</h4>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p>"The best executor I've used in years. Support is responsive and the features keep getting better."</p>
+                    <div class="user">
+                        <div class="user-avatar"></div>
+                        <div class="user-info">
+                            <h4>Jamie T.</h4>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-nav">
+                <span class="nav-dot active"></span>
+                <span class="nav-dot"></span>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="cta-content">
+            <h2>Ready to elevate your experience?</h2>
+            <p>Join thousands of satisfied users today.</p>
+            <a href="#" class="button primary">Start Now</a>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stat">
+            <span class="stat-number" data-target="10000">0</span><span>+</span>
+            <span class="stat-label">Downloads</span>
+        </div>
+        <div class="stat">
+            <span class="stat-number" data-target="4.9">0</span><span>/5</span>
+            <span class="stat-label">Rating</span>
+        </div>
+        <div class="stat">
+            <span class="stat-number" data-target="98">0</span><span>%</span>
+            <span class="stat-label">Satisfaction</span>
+        </div>
+    </section>
+
+    <section class="comparison">
+        <h2 class="section-title">Why Choose <span class="gradient-text">Star Executor?</span></h2>
+        <div class="comparison-table-wrapper">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Features</th>
+                        <th><span class="highlight">Star Executor</span></th>
+                        <th>Competitors</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Execution Speed</td>
+                        <td><i class="fas fa-check-circle check"></i> Ultra Fast</td>
+                        <td><i class="fas fa-times-circle uncheck"></i> Variable</td>
+                    </tr>
+                    <tr>
+                        <td>Security Features</td>
+                        <td><i class="fas fa-check-circle check"></i> Advanced Protection</td>
+                        <td><i class="fas fa-times-circle uncheck"></i> Basic</td>
+                    </tr>
+                    <tr>
+                        <td>Script Library</td>
+                        <td><i class="fas fa-check-circle check"></i> Extensive</td>
+                        <td><i class="fas fa-times-circle uncheck"></i> Limited</td>
+                    </tr>
+                    <tr>
+                        <td>Updates</td>
+                        <td><i class="fas fa-check-circle check"></i> Weekly</td>
+                        <td><i class="fas fa-times-circle uncheck"></i> Infrequent</td>
+                    </tr>
+                    <tr>
+                        <td>User Interface</td>
+                        <td><i class="fas fa-check-circle check"></i> Intuitive</td>
+                        <td><i class="fas fa-times-circle uncheck"></i> Complex</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="screenshots">
+        <h2 class="section-title">Product <span class="gradient-text">Showcase</span></h2>
+        <div class="gallery-container">
+            <div class="gallery">
+                <div class="gallery-item active">
+                    <img src="screenshot1.jpg" alt="Star Executor Interface">
+                    <div class="caption">Clean, intuitive interface design</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="screenshot2.jpg" alt="Script Editor">
+                    <div class="caption">Advanced script editor with syntax highlighting</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="screenshot3.jpg" alt="Script Library">
+                    <div class="caption">Extensive script library and resources</div>
+                </div>
+            </div>
+            <div class="gallery-nav">
+                <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <div class="gallery-dots">
+                    <span class="gallery-dot active"></span>
+                    <span class="gallery-dot"></span>
+                    <span class="gallery-dot"></span>
+                </div>
+                <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>Star Executor</h3>
+                <p>The premium scripting solution for professionals.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Links</h3>
+                <a href="index.html">Home</a>
+                <a href="docs.html">Documentation</a>
+                <a href="#">Support</a>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <a href="#"><i class="fas fa-envelope"></i> support@starexecutor.com</a>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Star Executor. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="chat-widget">
+        <div class="chat-bubble">
+            <i class="fas fa-comment-dots"></i>
+        </div>
+        <div class="chat-box">
+            <div class="chat-header">
+                <h4>Live Support</h4>
+                <button class="close-chat"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chat-messages">
+                <div class="message support">
+                    <div class="message-content">
+                        <p>Hi there! How can we help you today?</p>
+                        <span class="time">Just now</span>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type your message...">
+                <button><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add parallax effect to background
+            document.addEventListener('mousemove', function(e) {
+                const moveX = (e.clientX * -0.01);
+                const moveY = (e.clientY * -0.01);
+                document.body.style.backgroundPosition = `${moveX}px ${moveY}px`;
+            });
+            
+            // Mobile menu toggle
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (menuBtn) {
+                menuBtn.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                });
+            }
+            
+            // Enhanced testimonial slider with nav dots
+            let currentSlide = 0;
+            const testimonials = document.querySelectorAll('.testimonial');
+            const navDots = document.querySelectorAll('.nav-dot');
+            
+            if (testimonials.length > 1) {
+                // Update function to handle both testimonials and nav dots
+                function updateSlider() {
+                    // Hide all testimonials
+                    testimonials.forEach(testimonial => {
+                        testimonial.style.opacity = 0;
+                    });
+                    
+                    // Remove active class from all dots
+                    navDots.forEach(dot => {
+                        dot.classList.remove('active');
+                    });
+                    
+                    // Show current testimonial and activate current dot
+                    testimonials[currentSlide].style.opacity = 1;
+                    navDots[currentSlide].classList.add('active');
+                }
+                
+                // Add click events to nav dots
+                navDots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        currentSlide = index;
+                        updateSlider();
+                    });
+                });
+                
+                // Auto advance slides
+                setInterval(() => {
+                    currentSlide = (currentSlide + 1) % testimonials.length;
+                    updateSlider();
+                }, 5000);
+            }
+        });
+        
+        // Add floating elements animation
+        function createFloatingElements() {
+            const container = document.querySelector('.hero');
+            const elementsCount = 15;
+            const elements = ['<i class="fas fa-star"></i>', '<i class="fas fa-code"></i>', '<i class="fas fa-bolt"></i>'];
+            
+            for (let i = 0; i < elementsCount; i++) {
+                const element = document.createElement('div');
+                element.className = 'floating-element';
+                element.innerHTML = elements[Math.floor(Math.random() * elements.length)];
+                element.style.left = `${Math.random() * 100}%`;
+                element.style.top = `${Math.random() * 100}%`;
+                element.style.animationDelay = `${Math.random() * 5}s`;
+                element.style.fontSize = `${Math.random() * 1.5 + 0.5}rem`;
+                element.style.opacity = Math.random() * 0.6 + 0.1;
+                container.appendChild(element);
+            }
+        }
+        
+        createFloatingElements();
+        
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.feature-card, .testimonial-container, .cta, .stat').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add chat widget functionality
+        document.querySelector('.chat-bubble').addEventListener('click', function() {
+            document.querySelector('.chat-box').classList.toggle('active');
+            this.style.display = 'none';
+        });
+        
+        document.querySelector('.close-chat').addEventListener('click', function() {
+            document.querySelector('.chat-box').classList.remove('active');
+            document.querySelector('.chat-bubble').style.display = 'flex';
+        });
+        
+// ...existing code...
+document.querySelector('.chat-input button').addEventListener('click', function() {
+    const input = document.querySelector('.chat-input input');
+    const message = input.value.trim();
+    
+    if (message) {
+        const messagesContainer = document.querySelector('.chat-messages');
+        const newMessage = document.createElement('div');
+        newMessage.className = 'message user';
+        newMessage.innerHTML = `
+            <div class="message-content">
+                <p>${message}</p>
+                <span class="time">Just now</span>
+            </div>
+        `;
+        messagesContainer.appendChild(newMessage);
+        input.value = '';
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        
+        // Send message to email
+        sendChatMessageToEmail(message);
+        
+        // Simulate response after a delay
+        setTimeout(() => {
+            const response = document.createElement('div');
+            response.className = 'message support';
+            response.innerHTML = `
+                <div class="message-content">
+                    <p>Thanks for your message! A team member will respond shortly.</p>
+                    <span class="time">Just now</span>
+                </div>
+            `;
+            messagesContainer.appendChild(response);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }, 1000);
+    }
+});
+// ...existing code...
+        
+        // Handle Enter key in chat input
+        document.querySelector('.chat-input input').addEventListener('keyup', function(e) {
+            if (e.key === 'Enter') {
+                document.querySelector('.chat-input button').click();
+            }
+        });
+        
+        // Animate stat counters when they come into view
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            const speed = 200;
+            
+            counters.forEach(counter => {
+                const target = parseFloat(counter.getAttribute('data-target'));
+                const isDecimal = target % 1 !== 0;
+                const increment = target / speed;
+                
+                function updateCount() {
+                    const count = parseFloat(counter.innerText);
+                    if (count < target) {
+                        counter.innerText = isDecimal ? 
+                            Math.min((count + increment).toFixed(1), target) : 
+                            Math.min(Math.floor(count + increment), target);
+                        setTimeout(updateCount, 30);
+                    } else {
+                        counter.innerText = isDecimal ? target.toFixed(1) : target;
+                    }
+                }
+                
+                updateCount();
+            });
+        }
+        
+        // Gallery functionality
+        function initGallery() {
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('.gallery-item');
+            const dots = document.querySelectorAll('.gallery-dot');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            
+            function updateGallery() {
+                slides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                slides[currentSlide].classList.add('active');
+                dots[currentSlide].classList.add('active');
+            }
+            
+            if (prevBtn && nextBtn) {
+                prevBtn.addEventListener('click', () => {
+                    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                    updateGallery();
+                });
+                
+                nextBtn.addEventListener('click', () => {
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    updateGallery();
+                });
+                
+                dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        currentSlide = index;
+                        updateGallery();
+                    });
+                });
+            }
+        }
+        
+        // Initialize gallery if it exists
+        if (document.querySelector('.gallery')) {
+            initGallery();
+        }
+        
+        // Initialize stat counter animation when section is visible
+        const statsSection = document.querySelector('.stats');
+        if (statsSection) {
+            const observer = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entries[0].target);
+                }
+            });
+            observer.observe(statsSection);
+        }
+
+        // Theme toggle functionality
+        const themeToggle = document.querySelector('.theme-toggle');
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme === 'light') {
+            document.body.classList.add('light-theme');
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        } else if (currentTheme === 'dark') {
+            document.body.classList.add('dark-theme');
+            themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+        }
+
+        themeToggle.addEventListener('click', function() {
+            let theme;
+            if (document.body.classList.contains('light-theme')) {
+                document.body.classList.replace('light-theme', 'dark-theme');
+                theme = 'dark';
+                this.innerHTML = '<i class="fas fa-moon"></i>';
+            } else {
+                document.body.classList.replace('dark-theme', 'light-theme');
+                theme = 'light';
+                this.innerHTML = '<i class="fas fa-sun"></i>';
+            }
+            localStorage.setItem('theme', theme);
+        });
+
+        // Particle background effect
+        function createParticleBackground() {
+            const container = document.getElementById('particles-bg');
+            const particleCount = 50;
+            
+            if (container) {
+                for (let i = 0; i < particleCount; i++) {
+                    const size = Math.random() * 5 + 1;
+                    const particle = document.createElement('div');
+                    particle.className = 'particle';
+                    
+                    // Position randomly
+                    particle.style.left = Math.random() * 100 + 'vw';
+                    particle.style.top = Math.random() * 100 + 'vh';
+                    particle.style.width = size + 'px';
+                    particle.style.height = size + 'px';
+                    
+                    // Animation
+                    particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                    particle.style.animationDelay = Math.random() * 5 + 's';
+                    
+                    container.appendChild(particle);
+                    
+                    // Animate particles
+                    animateParticle(particle);
+                }
+            }
+        }
+
+        function animateParticle(particle) {
+            const moveX = Math.random() * 100 - 50; // -50 to 50 vw
+            const moveY = Math.random() * 100 - 50; // -50 to 50 vh
+            const duration = Math.random() * 15000 + 15000; // 15-30 seconds
+            
+            particle.animate([
+                { transform: 'translate(0, 0)' },
+                { transform: `translate(${moveX}vw, ${moveY}vh)` }
+            ], {
+                duration: duration,
+                iterations: Infinity,
+                direction: 'alternate',
+                easing: 'ease-in-out'
+            });
+        }
+
+        createParticleBackground();
+
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('back-to-top');
+        if (backToTopButton) {
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) { // Show after scrolling 300px
+                    backToTopButton.classList.add('visible');
+                } else {
+                    backToTopButton.classList.remove('visible');
+                }
+            });
+
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+// Set Star text directly without animation
+// Alternative typing animation that should be more reliable
+
+// Typing animation with single word "Star."
+const typingElement = document.querySelector('.typing-text');
+if (typingElement) {
+    typingElement.classList.add('gradient-text');
+    
+    const word = "Star.";
+    let letterIndex = 0;
+    
+    // Function to type letters one by one
+    function typeLetter() {
+        if (letterIndex < word.length) {
+            typingElement.textContent += word[letterIndex];
+            letterIndex++;
+            setTimeout(typeLetter, 250);
+        }
+    }
+    
+    // Start with empty text and begin typing
+    typingElement.textContent = '';
+    typeLetter();
+}
+        // Cookie consent functionality
+        const cookieConsent = document.getElementById('cookie-consent');
+        const acceptCookies = document.getElementById('accept-cookies');
+        const declineCookies = document.getElementById('decline-cookies');
+
+        // Check if user has already made a choice
+        const cookieChoice = localStorage.getItem('cookieConsent');
+
+        if (!cookieChoice && cookieConsent) {
+            // Show the banner after a short delay
+            setTimeout(() => {
+                cookieConsent.classList.add('active');
+            }, 2000);
+            
+            // Handle accept button
+            acceptCookies.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'accepted');
+                cookieConsent.classList.remove('active');
+            });
+            
+            // Handle decline button
+            declineCookies.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'declined');
+                cookieConsent.classList.remove('active');
+            });
+        }
+
+        // Function to send chat messages to your email
+        function sendChatMessageToEmail(message) {
+            // Use EmailJS service
+            emailjs.send(
+                'service_hbcnr75',       // Your service ID
+                'template_chat',         // Your template ID
+                {
+                    to_email: 'imnotcheataing@gmail.com',  // Fixed email address
+                    subject: 'New Chat Message from Star Executor',
+                    message: message,
+                    from_page: window.location.href
+                }
+            )
+            .then(function(response) {
+                console.log('Email sent successfully', response);
+            }, function(error) {
+                console.error('Failed to send email', error);
+                // Add visual feedback for errors
+                alert('Could not send your message. Please try again later.');
+            });
+        }
+    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+       (function() {
+          // Replace with your actual EmailJS user ID
+          emailjs.init("564CjE8AkCSpMFZjt");
+       })();
+    </script>
+</body>
+</html>
